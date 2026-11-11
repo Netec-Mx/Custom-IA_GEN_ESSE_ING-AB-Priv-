@@ -1,0 +1,21 @@
+﻿Semana,Indicador,Area,Valor_real,Meta,Observaciones
+S01,Disponibilidad de equipos (%),Ensamble,94.2,95.0,Dentro de tolerancia
+S01,OEE (%),Ensamble,78.5,85.0,
+S01,Scrap (%),Inyección,3.8,2.5,
+S01,MTBF (h),Empaque,120,150,
+S01,Tiempo de ciclo (s),Ensamble,45.2,44.0,
+S01,Productividad (piezas/turno),Ensamble,1200,1250,
+S02,Disponibilidad de equipos (%),Ensamble,91.0,95.0,
+S02,OEE (%),Ensamble,76.3,85.0,
+S02,Scrap (%),Inyección,4.1,2.5,
+S02,MTBF (h),Empaque,115,150,
+S02,Tiempo de ciclo (s),Ensamble,46.8,44.0,
+S02,Productividad (piezas/turno),Ensamble,12O0,1250,Captura manual
+S02,Disponibilidad de equipos (%),Inyección,96.1,95.0,
+S03,Disponibilidad de equipos (%),Ensamble,89.5,95.0,
+S03,OEE (%),Ensamble,74.1,85.0,
+S03,Scrap (%),Inyección,4.5,2.5,
+S03,MTBF (h),Empaque,108,150,
+S03,Tiempo de ciclo (s),Ensamble,47.5,44.0,
+S03,Productividad (piezas/turno),Ensamble,1150,1250,
+S03,Disponibilidad de equipos (%),Inyección,95.8,95.0,

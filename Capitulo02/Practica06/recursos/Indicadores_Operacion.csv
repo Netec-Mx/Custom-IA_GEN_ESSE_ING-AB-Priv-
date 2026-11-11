@@ -1,0 +1,11 @@
+﻿indicador,valor_actual,meta,unidad,turno,tipo_comparacion
+Disponibilidad,78.5,90.0,%,Turno 1,mayor_o_igual
+Rendimiento,92.3,85.0,%,Turno 1,mayor_o_igual
+Scrap,6.8,3.0,%,Turno 1,menor_o_igual
+Tiempo_Paro,47,30,min,Turno 2,menor_o_igual
+Disponibilidad,91.2,90.0,%,Turno 2,mayor_o_igual
+Rendimiento,80.1,85.0,%,Turno 2,mayor_o_igual
+Scrap,2.1,3.0,%,Turno 2,menor_o_igual
+Tiempo_Paro,28,30,min,Turno 3,menor_o_igual
+Disponibilidad,65.0,90.0,%,Turno 3,mayor_o_igual
+OEE,58.4,75.0,%,Turno 3,mayor_o_igual
