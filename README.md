@@ -1,36 +1,14 @@
-<p align="center">
-  <img src="assets/LogoNetec.png" alt="NETEC" width="300" />
-</p>
+<a href="https://netec.com">
+  <img src="https://static.wixstatic.com/media/96edd2_934dddb3230b4b16b1d1c56c51143738~mv2.png" alt="Logo de Netec" width="300"/>
+</a>
 
 # Inteligencia Artificial Generativa Essentials aplicada a la Ingeniería
 
-**Custom IA_GEN_ESSE_ING AB (Priv)** · Duración: 8 horas
+**Custom IA_GEN_ESSE_ING AB (Priv)** 
 
 ## Plataforma de laboratorios
 
 Te damos la bienvenida a la **plataforma de laboratorios** del curso **Inteligencia Artificial Generativa Essentials aplicada a la Ingeniería**. Aquí podrás explorar diferentes tecnologías a través de prácticas guiadas. ¡Desarrolla tus habilidades y lleva tus conocimientos al siguiente nivel!
-
-## Descripción del curso
-
-Este curso proporciona una introducción práctica al uso de la Inteligencia Artificial para optimizar procesos de ingeniería relacionados con el diseño, análisis, documentación técnica, automatización, control y toma de decisiones. A lo largo del curso, los participantes conocerán los fundamentos de la IA Generativa, aprenderán a diseñar prompts efectivos e integrarán herramientas como Microsoft Copilot, ChatGPT, Claude, Gemini y plataformas de automatización como n8n para optimizar proyectos de ingeniería, analizar información técnica, automatizar procesos repetitivos y fortalecer la eficiencia operativa mediante asistentes inteligentes.
-
-## Objetivos del curso
-
-Al finalizar el curso, el participante será capaz de:
-
-1. Comprender los fundamentos de la Inteligencia Artificial Generativa y su aplicación en proyectos y procesos de ingeniería.
-2. Diseñar prompts efectivos para analizar información técnica, generar documentación y apoyar actividades de ingeniería.
-3. Aplicar herramientas de Inteligencia Artificial para optimizar procesos de diseño, análisis, control y automatización.
-4. Analizar datos e información técnica para identificar oportunidades de optimización, riesgos y mejoras mediante IA.
-5. Diseñar automatizaciones básicas utilizando plataformas Low-Code para reducir actividades repetitivas y fortalecer el control operativo en procesos de ingeniería.
-
-## Perfil de audiencia
-
-Ingenieros, supervisores, coordinadores técnicos, personal de mantenimiento, calidad, manufactura, operaciones, automatización y profesionales involucrados en proyectos de ingeniería que buscan incorporar herramientas de Inteligencia Artificial para mejorar la productividad, optimizar procesos, automatizar tareas y fortalecer la toma de decisiones, sin necesidad de experiencia previa en programación.
-
-## Prerrequisitos
-
-No se requieren conocimientos previos en programación o Inteligencia Artificial. Se recomienda experiencia básica en procesos de ingeniería y el uso cotidiano de herramientas como correo electrónico, hojas de cálculo y procesadores de texto.
 
 ## Lista de laboratorios
 
@@ -101,44 +79,6 @@ Cada uno de estos laboratorios está diseñado para ofrecerte una experiencia pr
   - **Módulo 6:** Aplicación de plataformas de IA en proyectos de ingeniería.
   - **Descripción**: 3 documentos de un compresor, matriz de inconsistencias, verificación de citas e informe consolidado.
   - ⏱️ **Duración estimada**: 14 min.
-
-### Distribución del tiempo
-
-| Capítulo | Módulo | Duración del módulo | Prácticas |
-| --- | --- | --- | --- |
-| 1 | 1. Introducción a la Inteligencia Artificial Generativa | 50 min | Sin práctica |
-| 1 | 2. Inteligencia Artificial aplicada a procesos de ingeniería | 50 min | Sin práctica |
-| 1 | 3. Seguridad y Ética en la Era de la IA | 60 min | Prácticas 1 y 2 (18 + 18 min) |
-| 2 | 4. Fundamentos de la ingeniería de prompts | 60 min | Prácticas 3 y 4 (20 + 16 min) |
-| 2 | 5. Automatización de procesos de ingeniería mediante IA y n8n | 120 min | Prácticas 5 y 6 (36 + 36 min) |
-| 3 | 6. Aplicación de plataformas de IA en proyectos de ingeniería | 140 min | Prácticas 7 a 12 (6 × 14 min) |
-| **Total** | | **480 min (8 h)** | **228 min** |
-
-## Instrucciones generales del laboratorio
-
-1. Antes del curso, preparar las cuentas y los accesos con la [Guía de configuración](Setup_Guide.md). Las prácticas no requieren programación ni terminal.
-2. Cada práctica tiene su carpeta `recursos` con los archivos listos para descargar. Guardar el trabajo en `Documentos\Practicas_IA_Ingenieria\PracticaNN`.
-3. Todas las empresas, personas, equipos y cifras de los archivos son ficticios. No cargar información real de la organización en las herramientas de IA durante las prácticas.
-4. Las prácticas se diseñaron para versiones gratuitas; no es obligatorio adquirir licencias Premium. Criterios de uso:
-   - **Herramientas obligatorias solo en los módulos 5 y 6:** n8n (prácticas 5 y 6) y las plataformas del temario (prácticas 7 a 12: ChatGPT, Copilot, Claude, Gemini, NotebookLM y Google AI Studio), porque forman parte de los objetivos del módulo.
-   - **Módulos 1 a 4 (prácticas 1 a 4):** el instructor elige la herramienta de IA según sus capacidades, disponibilidad y límites de consumo.
-   - **Copilot con Word, Excel y PowerPoint:** se usa Microsoft Copilot Chat gratuito mediante la carga de archivos, sin licencia Premium ni Copilot integrado en las aplicaciones de Office. Copilot genera el contenido o los entregables descargables.
-   - **Limitaciones de las versiones gratuitas:** en todas las prácticas el instructor puede simplificar los escenarios, usar conjuntos de datos más pequeños o ajustar la profundidad y la extensión, conservando los objetivos de aprendizaje y los resultados esperados.
-
-## Estructura del repositorio
-
-```text
-.
-├── README.md                 Página principal (este archivo)
-├── Setup_Guide.md            Guía de configuración del entorno
-├── assets/                   Logotipo
-├── Capitulo01/               Prácticas 1 y 2 (módulos 1 a 3)
-│   └── PracticaNN/
-│       ├── README.md         Instrucciones de la práctica
-│       └── recursos/         Archivos de la práctica
-├── Capitulo02/               Prácticas 3 a 6 (módulos 4 y 5)
-└── Capitulo03/               Prácticas 7 a 12 (módulo 6)
-```
 
 ---
 
