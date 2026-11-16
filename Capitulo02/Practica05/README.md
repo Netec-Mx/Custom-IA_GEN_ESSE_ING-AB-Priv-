@@ -54,7 +54,7 @@ Los participantes utilizarán **n8n Cloud** y su asistente de inteligencia artif
      Genera todo el flujo automáticamente en mi pantalla.
      ```
 
-3. **Revisión automática de los bloques generados:**
+3. **Verificación visual del flujo generado por la IA:**
    * Observa cómo el asistente de n8n despliega instantáneamente los bloques conectados en tu lienzo de trabajo sin requerir que hagas clic en ninguno de ellos para configurarlos.
 
 4. **Apertura del chat de prueba para enviar un reporte real:**
