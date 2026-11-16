@@ -3,81 +3,69 @@
 **Duración de la práctica:** 30 minutos
 
 ## Descripción
-Los participantes utilizarán **n8n Cloud** y su asistente de inteligencia artificial integrado en la pantalla principal para construir un flujo automatizado mediante instrucciones en lenguaje natural. El sistema recibirá un reporte técnico, utilizará un modelo de inteligencia artificial para clasificar el tipo de incidencia, generará un resumen ejecutivo y redactará una notificación automática para el responsable correspondiente.
+Los participantes utilizarán **n8n Cloud** y su asistente de inteligencia artificial en la pantalla principal para construir un flujo automatizado **escribiendo una sola instrucción en lenguaje natural**. No necesitarán hacer clic en ningún bloque, configurar ajustes avanzados ni programar; el sistema generará y conectará todo automáticamente para recibir reportes, clasificarlos mediante IA, crear resúmenes ejecutivos y redactar notificaciones.
 
 ---
 
-## Sección 0: Acceso a la Interfaz y Configuración con Inteligencia Artificial
+## Sección 0: Acceso a la Interfaz y Conceptos Básicos
 
 1. **Paso a paso para ingresar a n8n Cloud:**
-   * Ingresa a la plataforma n8n mediante tu navegador web con tus credenciales institucionales.
-   * Al iniciar sesión, la interfaz te mostrará de forma predeterminada la pantalla del asistente de inteligencia artificial con la barra de texto central bajo la pregunta **What do you want to automate?**.
-   * Utilizarás directamente este chat conversacional de inteligencia artificial tanto para la demostración como para la práctica, sin necesidad de arrastrar nodos manualmente.
+   * Ingresa a la plataforma n8n con tus credenciales institucionales.
+   * Al iniciar sesión, verás de forma predeterminada la pantalla principal del asistente con la barra de texto central bajo la pregunta **What do you want to automate?**.
+   * Todo el trabajo se realiza directamente en este chat, dejando que la inteligencia artificial dibuje y conecte los bloques por ti.
 
-2. **Explicación de conceptos clave para la automatización:**
-   * **Plataforma de bajo código:** Espacio visual que permite integrar aplicaciones y modelos de inteligencia artificial mediante flujos lógicos conectados, reduciendo la necesidad de programación tradicional.
-   * **Estructura JSON:** Formato estándar basado en texto estructurado mediante llaves y pares de clave y valor, utilizado para intercambiar datos organizados entre sistemas.
-   * **Webhook:** Mecanismo de integración que permite a una aplicación enviar información en tiempo real hacia otra plataforma cada vez que se genera un evento técnico o incidencia operativa.
+2. **Conceptos clave en lenguaje sencillo:**
+   * **Automatización Conversacional:** Creación de flujos de trabajo dictando órdenes directas por escrito a la IA, sin manipular componentes visuales uno por uno.
+   * **Chat de Prueba Integrado:** Ventana de conversación directa que permite enviar mensajes normales para verificar el funcionamiento del flujo al instante.
 
 ---
 
 ## Sección 1: Demostración del Instructor (3 Pasos)
 
-1. **Creación del flujo automatizado mediante instrucción a la inteligencia artificial en n8n:**
-   * El instructor se ubica en la barra de chat del asistente y le pide generar el flujo completo escribiendo lo siguiente:
+1. **Creación automática del flujo mediante una orden directa:**
+   * El instructor se ubica en la barra de chat del asistente (**What do you want to automate?**) y escribe un único comando maestro:
      ```text
-     Crea un flujo automatizado que reciba un reporte técnico por webhook,
-     clasifique el tipo de incidencia mediante inteligencia artificial,
-     genere un resumen ejecutivo y redacte una notificación automática para el responsable.
+     Crea un flujo automatizado completo que inicie con un chat de prueba para escribir un reporte técnico,
+     luego use inteligencia artificial para clasificar el tipo de incidencia (Mecánica o Eléctrica),
+     genere un resumen ejecutivo corto y redacte una notificación automática para el responsable del área.
      ```
 
-2. **Validación del esquema de datos y variables procesadas:**
-   * El instructor verifica que la estructura generada automáticamente contenga los datos del equipo, la planta y la descripción de la falla listos para ser procesados.
+2. **Verificación visual del flujo generado por la IA:**
+   * El instructor muestra cómo la pantalla de n8n se llena automáticamente con los bloques conectados sin haber tenido que abrir ni configurar ningún nodo de forma manual.
 
-3. **Prueba de ejecución y verificación de la salida técnica:**
-   * El instructor hace clic en el botón de prueba o ejecución dentro de la misma interfaz generada por la inteligencia artificial y observa cómo el sistema entrega la clasificación de la incidencia, el resumen ejecutivo y la notificación ya listos.
+3. **Prueba inmediata escribiendo un mensaje:**
+   * El instructor abre el chat lateral, escribe un reporte normal (por ejemplo: *"La bomba de agua principal vibra demasiado y subió su temperatura"*), y muestra cómo la IA responde al instante con la clasificación, el resumen y la alerta redactada.
 
 ---
 
 ## Sección 2: Práctica Guiada del Participante (5 Pasos)
 
-1. **Acceso al panel principal y preparación del asistente de inteligencia artificial:**
-   * Desde tu panel principal de n8n Cloud donde visualizas la barra de chat con la pregunta **What do you want to automate?**, mantén seleccionada la opción **Assistant** en el menú lateral izquierdo.
+1. **Acceso al chat principal del asistente en n8n Cloud:**
+   * Desde tu panel principal de n8n Cloud, mantén la vista en la barra de texto central con la pregunta **What do you want to automate?** (o haz clic en **Assistant** en el menú izquierdo).
 
-2. **Ingreso del prompt maestro para la generación automática del flujo:**
-   * Escribe y envía la siguiente instrucción detallada en varias líneas dentro de la barra de chat de la inteligencia artificial de n8n:
+2. **Envío del prompt maestro para que la IA haga todo el trabajo:**
+   * Copia y envía la siguiente instrucción detallada dentro del chat de la inteligencia artificial:
      ```text
-     Construye un flujo automatizado completo de gestión de incidencias técnicas que realice lo siguiente:
-     1. Inicie con un nodo de Webhook preparado para recibir peticiones POST con reportes técnicos de planta.
-     2. Integre un nodo de procesamiento de inteligencia artificial que analice el reporte recibido.
-     3. Clasifique el tipo de incidencia estrictamente en Mecánica, Eléctrica, Instrumentación o Control basándote en los síntomas.
-     4. Genere un resumen ejecutivo de dos líneas con la criticidad operativa y redacte una notificación formal para el responsable del área.
+     Construye un flujo automatizado de punta a punta que haga lo siguiente:
+     1. Inicie con un nodo de Chat (Chat Trigger) para recibir reportes técnicos en texto normal.
+     2. Conecte un nodo de inteligencia artificial encargado de analizar el mensaje.
+     3. Clasifique la incidencia en: Mecánica, Eléctrica, Instrumentación o Control.
+     4. Genere un resumen ejecutivo de dos líneas con la urgencia y redacte un correo formal de notificación listo para el jefe de mantenimiento.
+     Genera todo el flujo automáticamente en mi pantalla.
      ```
 
-3. **Configuración de los datos de prueba en formato JSON dentro del flujo generado:**
-   * Una vez que la inteligencia artificial genere la estructura visual del flujo, abre el nodo de entrada y configura un reporte técnico de prueba utilizando la siguiente estructura JSON:
-     ```json
-     {
-       "reporte_id": "INC-4092",
-       "planta_operativa": "Planta Petroquímica Norte",
-       "equipo_afectado": "Bomba Centrífuga de Alta Presión P-104",
-       "operador_reporta": "Ing. Javier Morales",
-       "detalle_incidencia": "Se detecta incremento súbito de vibración axial y aumento de temperatura en el rodamiento principal por encima de los noventa grados Celsius, generando riesgo inminente de parada no programada en la línea de bombeo."
-     }
-     ```
+3. **Revisión automática de los bloques generados:**
+   * Observa cómo el asistente de n8n despliega instantáneamente los bloques conectados en tu lienzo de trabajo sin requerir que hagas clic en ninguno de ellos para configurarlos.
 
-4. **Ajuste de la instrucción interna del nodo de inteligencia artificial:**
-   * Dentro del nodo de inteligencia artificial creado automáticamente en tu lienzo, verifica y ajusta la directriz interna para garantizar una salida limpia y estructurada mediante el siguiente comando multilineal:
+4. **Apertura del chat de prueba para enviar un reporte real:**
+   * En la parte inferior o lateral de tu pantalla, haz clic en el botón de prueba o en **Open chat**.
+   * Escribe y envía el siguiente reporte técnico en lenguaje cotidiano (sin códigos ni formatos especiales):
      ```text
-     Actúa como un Ingeniero Analista de Operaciones y Mantenimiento.
-     Procesa el JSON recibido y devuelve obligatoriamente:
-     Tipo de Incidencia: (Mecánica, Eléctrica, Instrumentación o Control).
-     Resumen Ejecutivo: (Diagnóstico técnico y criticidad operativa en dos líneas).
-     Notificación al Responsable: (Mensaje formal de alerta técnica dirigido al jefe de mantenimiento del área correspondiente).
+     Hola, reporto que en la Planta Norte el motor principal de la faja transportadora comenzó a emitir chispas y un fuerte olor a quemado, lo que puede detener toda la operación si no se revisa de inmediato.
      ```
 
-5. **Ejecución y verificación del flujo automatizado:**
-   * Haz clic en el botón de prueba o ejecución manual en tu lienzo de n8n, verifica en el panel de resultados que la inteligencia artificial procese el JSON de prueba, determine el tipo de incidencia como **Mecánica** y entregue el resumen ejecutivo junto con la notificación lista para el responsable técnico.
+5. **Verificación del resultado instantáneo:**
+   * Revisa la ventana de conversación y observa cómo el sistema procesa tu mensaje de forma autónoma, entregando la clasificación de la incidencia como **Eléctrica**, el resumen ejecutivo de la falla y el mensaje de notificación listo para el responsable.
 
 ## Resultado esperado
-Un flujo automatizado completo construido mediante el asistente de inteligencia artificial de **n8n Cloud**, capaz de recibir reportes técnicos mediante estructuras JSON, clasificarlos según el tipo de incidencia y generar resúmenes ejecutivos con notificaciones automáticas para el personal responsable.
+Un flujo automatizado completo en **n8n Cloud**, construido enteramente mediante una orden en lenguaje natural en el asistente de inteligencia artificial, capaz de recibir reportes técnicos en texto normal, clasificarlos y generar resúmenes con alertas automáticas sin necesidad de abrir ni configurar ningún bloque manualmente.
