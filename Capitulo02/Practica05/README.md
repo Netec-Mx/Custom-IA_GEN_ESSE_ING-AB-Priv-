@@ -3,89 +3,88 @@
 **Duración de la práctica:** 30 minutos
 
 ## Descripción
-Los participantes construirán su primer flujo de automatización paso a paso utilizando la plataforma Low-Code **n8n**[cite: 4]. Aprenderán desde cero cómo conectar piezas visuales (llamadas nodos) para que una inteligencia artificial reciba un reporte técnico, lo lea, entienda qué tipo de falla es, cree un resumen corto y envíe una notificación automática, todo sin necesidad de saber programar.
+Los participantes construirán un flujo automatizado completo dentro de **n8n** utilizando **exclusivamente prompts en lenguaje natural**, sin programar ni conectar herramientas externas. Mediante el **Asistente de IA integrado de n8n (`Assistant`)**, los asistentes generarán automáticamente la arquitectura de nodos y configurarán instrucciones generativas para que el flujo cree un reporte técnico simulado, clasifique la incidencia, redacte un resumen ejecutivo y genere la notificación final de manera 100% autónoma.
 
 ---
 
-## ¿Cómo funciona n8n? (Componentes y Arquitectura Básica)
-Para los que nunca han usado n8n, imagina que estás armando un rompecabezas donde cada pieza cumple una función específica. Estas piezas se llaman **nodos** y se conectan entre sí mediante flechas para formar un camino o **flujo**. Los componentes principales que usaremos son:
+## ¿Cómo funciona la creación por prompts en n8n?
+En lugar de arrastrar piezas manualmente, utilizaremos la inteligencia artificial nativa de n8n en dos niveles:
 
-1. **El Disparador (Trigger):** Es la pieza que da inicio a todo el proceso. Funciona como un botón de encendido o una alarma (por ejemplo, cuando alguien presiona un botón o llega un mensaje nuevo).
-2. **El Nodo de Inteligencia Artificial (AI Node / LLM):** Es el "cerebro" dentro del flujo. Aquí es donde la IA lee los textos, piensa, clasifica y escribe de forma completamente autónoma usando instrucciones sencillas en lenguaje natural.
-3. **El Nodo de Procesamiento o Decisión (If / Switch):** Funciona como un vigilante o desvío de tránsito. Lee lo que dijo la IA y decide por qué camino debe continuar el flujo (por ejemplo: si la falla es grave, va por el camino rojo; si es leve, va por el verde).
-4. **El Nodo de Acción o Notificación:** Es la pieza final que ejecuta una tarea en el mundo exterior, como enviar un correo electrónico, un mensaje de alerta o un reporte resumido al responsable correspondiente.
+1. **Asistente Constructor (`Assistant` en el menú izquierdo):** Lee una instrucción en lenguaje natural y arma automáticamente los nodos y las flechas en el lienzo de trabajo.
+2. **Nodos Generativos de Ejecución:** Dentro de los nodos creados, solo escribimos instrucciones de texto (prompts) para que la IA invente los datos de prueba, los analice y redacte la alerta sin requerir bases de datos, archivos ni cuentas de correo reales.
 
 ---
 
 ## Sección 1: Demostración del Instructor - Tres Pasos
 
-1. **Paso 1: Crear el inicio del flujo y la generación del reporte (Trigger + IA)**
-   * Abre tu cuenta o entorno de n8n, haz clic en **New Workflow** (Nuevo Flujo).
-   * Añade un nodo de tipo **Manual Trigger** (un botón que puedes presionar para probar el flujo cuando quieras).
-   * Conéctalo a un nodo de Inteligencia Artificial y escribe la siguiente instrucción generativa para que la IA cree el caso base:
+1. **Paso 1: Ordenar al Asistente de n8n que construya el flujo mediante un prompt**
+   * Abre un flujo nuevo en n8n (`New Workflow`).
+   * En el menú lateral izquierdo, haz clic en **`Assistant`** para abrir el chat constructor de flujos.
+   * Pega la siguiente instrucción para que n8n arme toda la estructura por ti:
      ```text
-     Actúa como un Ingeniero de Confiabilidad.
-     Genera de manera autónoma un reporte técnico breve sobre la falla de un equipo rotativo en planta,
-     clasifica la incidencia en una categoría operativa y redacta un resumen ejecutivo de deux líneas.
+     Construye un flujo de trabajo sencillo con un disparador manual (Manual Trigger) conectado a tres nodos secuenciales de IA (usando Anthropic o Basic LLM Chain).
+     El primer nodo debe generar un reporte técnico simulado sobre la falla de una bomba industrial.
+     El segundo nodo debe leer ese reporte, clasificar la falla (Mecánica, Eléctrica o Control) y crear un resumen ejecutivo de dos líneas.
+     El tercer nodo debe redactar un mensaje formal de alerta listo para notificar al jefe de mantenimiento.
+     No conectes aplicaciones externas, todo debe ejecutarse con texto generado por IA.
+     ```
+   * Acepta o aplica los cambios sugeridos por el asistente para que los nodos aparezcan conectados en tu pantalla.
+
+2. **Paso 2: Verificar y ajustar las instrucciones generativas dentro de los nodos**
+   * Haz clic en cada uno de los nodos de IA creados en el lienzo y verifica que sus campos **Prompt** contengan instrucciones claras para operar con datos autogenerados (si falta alguno, pega este comando en el nodo de clasificación):
+     ```text
+     Actúa como un Especialista en Diagnóstico Industrial.
+     Analiza el reporte técnico recibido del nodo anterior, clasifica la incidencia en una categoría operativa
+     y redacta un resumen ejecutivo de dos líneas enfocado en la criticidad.
      ```
 
-2. **Paso 2: Organizar y estructurar la información con la IA**
-   * Conecta el nodo anterior a otro bloque de procesamiento donde le pedirás a la inteligencia artificial que ordene los datos para que sean fáciles de leer por el sistema mediante este comando:
-     ```text
-     Actúa como un Arquitecto de Automatización.
-     Toma los datos procesados y estructúralos en formato limpio con los campos:
-     categoria, resumen_ejecutivo y severidad, asegurando que el contenido sea autogenerado.
-     ```
-
-3. **Paso 3: Enviar la notificación automática**
-   * Conecta una última pieza que simule el envío de la alerta. Configura la instrucción final para la IA:
-     ```text
-     Actúa como un Coordinador de Operaciones.
-     Redacta el mensaje de alerta final integrando la categoría y el resumen ejecutivo para notificar al equipo responsable.
-     ```
+3. **Paso 3: Ejecutar el flujo autogenerado y validar la salida**
+   * Haz clic en el botón negro **`Execute`** en la parte inferior de la pantalla.
+   * Observa cómo el flujo se ejecuta paso a paso y abre el último nodo para verificar en el panel **Output** el reporte generado, su clasificación y la notificación redactada.
 
 ---
 
 ## Sección 2: Práctica Guiada del Participante - Cinco Pasos
 
-1. **Paso 1: Iniciar el flujo desde cero y autogenerar el reporte en n8n**
-   * En tu pantalla de n8n, añade un nodo de inicio (Trigger). Luego, busca y añade un nodo de Inteligencia Artificial. Haz clic en él y escribe esta instrucción para que el sistema cree un problema eléctrico de forma automática:
+1. **Paso 1: Generar la estructura completa del flujo mediante el Asistente de n8n**
+   * Crea un nuevo flujo en blanco (`New Workflow`) y abre el panel **`Assistant`** en el menú izquierdo.
+   * Envía el siguiente prompt para que n8n diseñe y conecte todos los nodos automáticamente:
      ```text
-     Actúa como un Ingeniero de Mantenimiento.
-     Genera de manera completamente autónoma un reporte de incidente sobre una sobrecarga térmica en un tablero eléctrico de control.
+     Crea un flujo automatizado que inicie con un disparador manual y conecte cuatro nodos de IA en secuencia.
+     Nodo 1: Genera un reporte técnico autogenerado sobre una sobrecarga térmica en un tablero eléctrico industrial.
+     Nodo 2: Clasifica el tipo de falla eléctrica y justifica técnicamente el diagnóstico.
+     Nodo 3: Redacta un resumen ejecutivo de dos líneas con la acción correctiva inmediata.
+     Nodo 4: Redacta la notificación final de alerta indicando si debe ir al canal prioritario de guardia o a mantenimiento rutinario.
+     Todo debe funcionar exclusivamente con prompts de IA sin servicios externos.
      ```
 
-2. **Paso 2: Conectar el nodo de IA para clasificar la incidencia**
-   * Arrastra una flecha desde tu nodo anterior para crear un nuevo nodo de lenguaje de IA. Escribe la siguiente instrucción para que el modelo analice y separe el tipo de problema:
+2. **Paso 2: Refinar el prompt de autogeneración del incidente (Nodo 1)**
+   * Haz doble clic en el primer nodo de IA generado en el lienzo, ubica el campo **Prompt** y asegúrate de que tenga esta instrucción exacta para garantizar un caso técnico realista:
      ```text
-     Actúa como un Especialista en Diagnóstico de Fallas.
-     Analiza el reporte eléctrico autogenerado y clasifica el tipo de incidencia (Térmica, Eléctrica o Mecánica)
-     junto con una breve justificación técnica.
+     Actúa como un Ingeniero de Mantenimiento de Planta.
+     Genera de manera completamente autónoma un reporte de incidente detallado sobre una sobrecarga térmica
+     en un tablero eléctrico principal de distribución, incluyendo temperatura alcanzada y equipos afectados.
      ```
 
-3. **Paso 3: Crear el resumen ejecutivo paso a paso**
-   * Añade un nodo consecutivo en la pantalla y configúralo con el siguiente comando conversacional para resumir el texto técnico:
+3. **Paso 3: Refinar el prompt de clasificación y análisis técnico (Nodo 2)**
+   * Abre el segundo nodo de IA del flujo y actualiza su campo **Prompt** con el siguiente comando:
      ```text
-     Actúa como un Ingeniero Documentador.
-     Extrae la información principal del análisis anterior y genera un resumen ejecutivo de dos líneas
-     enfocado en la acción correctiva inmediata.
+     Actúa como un Analista de Fallas Eléctricas.
+     Lee el reporte autogenerado en el paso anterior, clasifica el tipo exacto de incidencia
+     y redacta una breve justificación técnica de por qué ocurrió.
      ```
 
-4. **Paso 4: Configurar una regla lógica de desvío (¿Es urgente o rutinario?)**
-   * Añade a tu flujo un nodo de decisión llamado **If** (Condicional). Este nodo sirve para evaluar qué tan grave es el asunto usando esta instrucción sencilla para guiar el filtro:
+4. **Paso 4: Refinar el prompt de resumen y enrutamiento de alerta (Nodos 3 y 4)**
+   * Abre el último nodo de IA del flujo y asegúrate de que su campo **Prompt** consolide la decisión y la notificación final con esta instrucción:
      ```text
-     Actúa como un Gestor de Operaciones.
-     Establece la regla para que las incidencias críticas sean derivadas al canal prioritario de guardia
-     y las moderadas al buzón de mantenimiento rutinario.
+     Actúa como un Coordinador de Operaciones de Ingeniería.
+     Toma el análisis anterior, redacta un resumen ejecutivo de dos líneas, determina si la alerta va al canal crítico de guardia
+     o al buzón rutinario, y escribe el mensaje formal de notificación listo para enviar al responsable.
      ```
 
-5. **Paso 5: Probar el flujo completo y validar el resultado**
-   * Haz clic en el botón superior **Test Workflow** (Probar Flujo) dentro de n8n para ver cómo las piezas trabajan juntas de forma automática. Verifica que todo corra correctamente escribiendo esta instrucción final de validación:
-     ```text
-     Actúa como un Administrador de Sistemas.
-     Simula la ejecución final del flujo en n8n y redacta una breve constancia que confirme
-     la recepción, clasificación, resumen y notificación automática de la incidencia.
-     ```
+5. **Paso 5: Ejecutar el flujo completo y validar los resultados en n8n**
+   * Haz clic en el botón negro **`Execute`** en la parte inferior del lienzo.
+   * Verifica que cada nodo se marque en verde al completarse y revisa la pestaña **Output** del nodo final para comprobar que la IA creó el reporte, lo clasificó, lo resumió y redactó la notificación sin requerir datos externos.
 
 ## Resultado esperado
-Un flujo de trabajo visual totalmente funcional en **n8n**, creado paso a paso en 30 minutos, donde la inteligencia artificial autogenera los datos, clasifica las fallas, crea un resumen gerencial y toma decisiones lógicas para notificar al personal adecuado sin requerir archivos externos ni conocimientos previos de programación.
+Un flujo de automatización funcional en **n8n** creado y operado **100% mediante prompts**, donde el asistente de IA construye la arquitectura visual y los nodos generativos ejecutan de punta a punta la creación del reporte técnico, la clasificación de la falla, el resumen ejecutivo y la notificación operativa.
