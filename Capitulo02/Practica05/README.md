@@ -34,7 +34,7 @@ Los participantes utilizarán **n8n Cloud** y su asistente de inteligencia artif
    * El instructor muestra cómo la pantalla de n8n se llena automáticamente con los bloques conectados sin haber tenido que abrir ni configurar ningún nodo de forma manual.
 
 3. **Prueba inmediata escribiendo un mensaje:**
-   * El instructor abre el chat lateral, escribe un reporte normal (por ejemplo: *"La bomba de agua principal vibra demasiado y subió su temperatura"*), y muestra cómo la IA responde al instante con la clasificación, el resumen y la alerta redactada.
+   * El instructor abre el chat lateral, escribe un reporte normal *"La bomba de agua principal vibra demasiado y subió su temperatura"*, y muestra cómo la IA responde al instante con la clasificación, el resumen y la alerta redactada.
 
 ---
 
