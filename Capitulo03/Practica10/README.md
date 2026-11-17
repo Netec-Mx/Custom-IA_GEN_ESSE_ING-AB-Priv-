@@ -3,65 +3,60 @@
 **Duración de la práctica:** 30 minutos
 
 ## Descripción
-Los participantes utilizarán **Google AI Studio** para configurar un asistente especializado que integre documentación técnica como base de conocimiento, permitiendo procesar manuales, especificaciones y procedimientos para responder consultas operativas, resolver incidencias y generar recomendaciones estandarizadas para el control de procesos[cite: 5].
+A diferencia de un chat de uso general (como Gemini), **Google AI Studio** es una plataforma de desarrollo diseñada específicamente para ingenieros y creadores, permitiendo ajustar parámetros técnicos avanzados (como temperatura y control de tokens), establecer system instructions estrictas e integrar grandes volúmenes de documentación técnica como base de conocimiento persistente. En esta práctica, los participantes utilizarán esta herramienta para procesar manuales, especificaciones y procedimientos mediante lenguaje natural, respondiendo consultas operativas, resolviendo incidencias y generando recomendaciones estandarizadas para el control de procesos listos para exportar.
 
 ---
 
 ## Sección 1: Demostración del Instructor (3 Pasos)
 
-1. **Configuración del sistema y carga de documentación técnica:**
-   * El instructor ingresa a la plataforma **Google AI Studio**, crea un nuevo "Chat Prompt" y utiliza la sección de configuración de contexto y subida de archivos para cargar los manuales mediante el siguiente prompt:
+1. **Creación del asistente y carga de manuales:**
+   * El instructor ingresa a **Google AI Studio**, abre un nuevo prompt de chat y escribe la siguiente instrucción para integrar la documentación:
      ```text
-     Actúa como un Administrador de Modelos y Arquitecto de Datos Técnicos.
-     Configura este asistente integrando los manuales de equipos, especificaciones técnicas y procedimientos operativos subidos como base de conocimiento estricta para resolver dudas de ingeniería.
+     Configura un asistente técnico que cargue y procese los manuales de equipos, especificaciones y procedimientos operativos como base de conocimiento estricta.
      ```
 
-2. **Definición de directrices y restricciones en System Instructions:**
-   * El instructor establece el comportamiento del asistente utilizando el panel de instrucciones del sistema con el siguiente comando:
+2. **Definición de directrices de respuesta:**
+   * El instructor configura el comportamiento del asistente enviando el siguiente prompt:
      ```text
-     Actúa como un Ingeniero Consultor de Soporte Técnico Industrial.
-     Responde exclusivamente basándote en los manuales y especificaciones técnicas proporcionadas en el contexto, evitando suposiciones y citando la fuente exacta en cada recomendación operativa.
+     Establece la regla de responder exclusivamente basándote en los manuales cargados, asegurando rigor técnico y formato exportable para ingeniería.
      ```
 
-3. **Prueba en vivo de resolución de incidencias y control de procesos:**
-   * El instructor realiza una simulación de falla en el chat de prueba utilizando la siguiente instrucción para evaluar la respuesta del asistente:
+3. **Demostración de diagnóstico y exportación:**
+   * El instructor ejecuta una prueba en vivo con la siguiente orden para generar un reporte:
      ```text
-     Actúa como un Supervisor de Turno de Ingeniería.
-     Diagnostica la causa raíz de una baja de presión en el sistema principal de bombeo y genera una recomendación estandarizada para el seguimiento y control correctivo.
+     Analiza la incidencia de presión en el sistema de bombeo según la base de conocimiento y redacta un reporte correctivo estandarizado listo para exportar.
      ```
 
 ---
 
 ## Sección 2: Práctica Guiada del Participante (5 Pasos)
 
-1. **Creación del Chat Prompt en Google AI Studio:**
-   * Abre la interfaz de **Google AI Studio** con tu cuenta institucional y selecciona la opción para crear un nuevo **Chat Prompt**.
+1. **Acceso a Google AI Studio:**
+   * Abre la interfaz de **Google AI Studio** con tu cuenta institucional y selecciona la opción para crear un nuevo chat.
 
-2. **Configuración de las instrucciones del sistema (System Instructions):**
-   * Configura el rol y las reglas del asistente utilizando la siguiente directriz en el panel de system instructions:
+2. **Configuración del asistente y carga de fuentes:**
+   * Envía la siguiente instrucción detallada dentro del chat para preparar el entorno:
      ```text
-     Actúa como un Asistente Experto en Confiabilidad y Procesos de Ingeniería.
-     Utiliza la documentación técnica provista para guiar al equipo en la solución de problemas, estandarizar procedimientos de mantenimiento y asegurar el cumplimiento de las normativas vigentes.
+     Actúa como un Administrador de Conocimiento Técnico. Configura este espacio integrando los manuales, especificaciones y procedimientos provistos como base de conocimiento única, dejándolo listo para exportar resultados.
      ```
 
-3. **Carga de fuentes y manuales en la base de conocimiento:**
-   * Añade tus archivos PDF, manuales de equipos o especificaciones mediante el botón de adjuntar archivos en la interfaz y envía la siguiente instrucción en el chat:
+3. **Verificación de la base de conocimiento:**
+   * Envía el siguiente prompt para comprobar que el asistente responde únicamente con los documentos integrados:
      ```text
-     Procesa los archivos de manuales técnicos y procedimientos cargados en la sesión para indexarlos como referencia única en las futuras consultas del equipo de ingeniería.
+     Realiza una consulta de prueba sobre los parámetros operativos y los límites de seguridad de los equipos en los manuales cargados, presentando un resumen estructurado para exportar.
      ```
 
-4. **Consulta para la resolución de incidencias operativas:**
-   * Envía un caso práctico de falla en el chat del asistente utilizando el siguiente prompt para obtener un diagnóstico estandarizado:
+4. **Resolución guiada de incidencias operativas:**
+   * Envía un caso práctico de falla en el chat utilizando el siguiente prompt:
      ```text
-     Actúa como un Ingeniero de Mantenimiento Correctivo.
-     Analiza la incidencia de sobrecalentamiento reportada en el compresor de aire industrial según los manuales cargados, y detalla los pasos de inspección y las recomendaciones de control.
+     Actúa como un Ingeniero de Mantenimiento Correctivo. Analiza la incidencia de sobrecalentamiento reportada en el compresor de aire industrial según la documentación cargada, detallando los pasos de inspección listos para exportar.
      ```
 
-5. **Generación de recomendaciones estandarizadas para el control de procesos:**
-   * Pide al asistente que consolide el formato operativo final mediante la siguiente instrucción en el chat:
+5. **Generación de recomendaciones estandarizadas:**
+   * Pide al asistente que consolide el formato operativo final mediante la siguiente instrucción:
      ```text
-     Genera un reporte estandarizado con el formato de seguimiento y control de procesos para prevenir la recurrencia de la incidencia anterior, dejándolo listo para exportar a la documentación del área de ingeniería.
+     Genera un reporte estandarizado con el formato de seguimiento y control de procesos para prevenir la recurrencia de la falla analizada, dejándolo listo para exportar a la documentación del área de ingeniería.
      ```
 
 ## Resultado esperado
-Un asistente configurado y optimizado en **Google AI Studio**, capaz de utilizar manuales, especificaciones y procedimientos como base de conocimiento técnica para resolver incidencias de ingeniería y generar recomendaciones estandarizadas de control[cite: 5].
+Un asistente configurado en **Google AI Studio** que aprovecha las ventajas de la plataforma para procesar manuales, especificaciones y procedimientos como base de conocimiento técnica, facilitando la resolución de incidencias y la generación de recomendaciones estandarizadas listas para exportar a GitHub.
