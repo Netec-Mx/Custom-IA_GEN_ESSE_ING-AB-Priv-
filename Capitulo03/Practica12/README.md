@@ -1,161 +1,74 @@
 # Práctica 12. Analizar manuales técnicos, procedimientos, especificaciones, normas o reportes de ingeniería utilizando Claude para identificar inconsistencias, riesgos, acciones pendientes y generar un informe consolidado para apoyar la toma de decisiones del equipo de ingeniería
 
-**Capítulo 3. Plataformas de Inteligencia Artificial para la Ingeniería · Módulo 6. Aplicación de plataformas de IA en proyectos de ingeniería (Claude Projects, grandes ventanas de contexto y organización del conocimiento)**
+**Duración de la práctica:** 30 minutos
 
-## Metadatos
-
-| Parámetro | Detalle |
-| :--- | :--- |
-| **Duración** | 14 minutos |
-| **Complejidad** | Media |
-| **Nivel de Bloom** | Analizar |
-| **Herramientas** | Claude (versión gratuita; Projects si la versión disponible lo permite) y Microsoft Word |
-| **Archivos** | `DOC1_Procedimiento_Mtto_CA-250.pdf`, `DOC2_Reporte_Inspeccion_CA-250.pdf`, `DOC3_Especificacion_Fabricante_CA-250.pdf` |
-
-## Descripción General
-
-El participante organizará en Claude la documentación de un compresor de aire: el procedimiento de mantenimiento preventivo, el último reporte de inspección y la hoja de especificaciones del fabricante. Aprovechando la ventana de contexto de Claude y, si la versión lo permite, un proyecto con instrucciones del caso, pedirá identificar inconsistencias entre documentos, riesgos técnicos y acciones pendientes con la fuente de cada hallazgo. Verificará las citas contra los documentos originales y generará un informe consolidado para la toma de decisiones del equipo de ingeniería.
-
-La práctica se realiza con Claude en su versión gratuita, ya que forma parte de los objetivos del módulo. El instructor puede reducir el número de documentos según los límites disponibles. Todos los documentos son ficticios.
-
-## Objetivos de Aprendizaje
-
-Al finalizar la práctica, el participante será capaz de:
-
-- Organizar documentación técnica en Claude con instrucciones del caso.
-- Identificar inconsistencias, riesgos y acciones pendientes entre documentos.
-- Verificar cada cita contra el documento original.
-- Generar un informe consolidado para la toma de decisiones.
-
-## Prerrequisitos
-
-- Cuenta gratuita de Claude (ver [Setup_Guide.md](../../Setup_Guide.md)).
-- Haber revisado el tema *Claude Projects, grandes ventanas de contexto y organización del conocimiento* del Módulo 6.
-
-## Entorno de Laboratorio
-
-| Herramienta | Uso | Acceso |
-| :--- | :--- | :--- |
-| Claude | Análisis de la documentación | [claude.ai](https://claude.ai/) |
-| Visor de PDF y Microsoft Word | Verificar citas y guardar el informe | Navegador o lector de PDF; Word instalado o [microsoft365.com](https://www.microsoft365.com/) |
-
-**Archivos de la práctica**
-
-| Archivo | Descripción |
-| :--- | :--- |
-| [DOC1_Procedimiento_Mtto_CA-250.pdf](recursos/DOC1_Procedimiento_Mtto_CA-250.pdf) | Procedimiento MTP-CA250-2026-Rev03: condiciones de operación, actividades, criterios de aceptación y acciones pendientes |
-| [DOC2_Reporte_Inspeccion_CA-250.pdf](recursos/DOC2_Reporte_Inspeccion_CA-250.pdf) | Reporte de inspección RIT-CA250-2026-002: condiciones encontradas, hallazgos, riesgos y recomendaciones |
-| [DOC3_Especificacion_Fabricante_CA-250.pdf](recursos/DOC3_Especificacion_Fabricante_CA-250.pdf) | Hoja de especificaciones del fabricante, revisión 2022 |
-
-> **Cómo descargar los archivos:** hacer clic en el nombre del archivo y seleccionar **Download raw file**. Guardarlos en `Documentos\Practicas_IA_Ingenieria\Practica12`.
-
-## Instrucciones Paso a Paso
-
-### Paso 1: Organizar la documentación en Claude (3 min)
-
-1. Abrir [claude.ai](https://claude.ai/) e iniciar sesión.
-2. Si la opción **Proyectos** (**Projects**) está disponible:
-   - Crear el proyecto `Compresor CA-250`.
-   - En **Instrucciones del proyecto**, escribir: *"Eres ingeniero de confiabilidad. Responde solo con la información de los documentos del proyecto y cita el documento y la sección de cada dato. Si un dato no está en los documentos, indícalo."*
-   - Agregar los 3 PDF en **Conocimiento del proyecto** e iniciar una conversación dentro del proyecto.
-3. Si **Proyectos** no está disponible, iniciar una conversación nueva, adjuntar los 3 PDF y pegar las mismas instrucciones al inicio del primer mensaje.
-
-**Resultado esperado:** Los 3 documentos están disponibles para Claude.
-
-**Verificación:** Enviar *"Lista los documentos, su código, su fecha o revisión y su tipo"*: Claude nombra los 3 documentos.
-
-### Paso 2: Identificar inconsistencias entre documentos (4 min)
-
-1. Enviar:
-
-```text
-Compara los 3 documentos y entrega una tabla | Aspecto | DOC1 (procedimiento) | DOC2 (inspección) | DOC3 (fabricante) | Inconsistencia | Riesgo (Alto/Medio/Bajo) |.
-Compara: rango de presión de descarga, revisión del procedimiento usado, tipo de lubricante, intervalo de cambio de aceite, temperatura máxima de carcasa y límite de vibración.
-Cita la sección de cada dato. No supongas información que no esté en los documentos.
-```
-
-**Resultado esperado:** Una tabla con las inconsistencias y su fuente.
-
-**Verificación:** La tabla incluye al menos estas inconsistencias:
-
-| Aspecto | Inconsistencia |
-| :--- | :--- |
-| Presión de descarga | DOC1: 8.5 ±0.3 bar; DOC3 (usado en DOC2): 8.0 ±0.5 bar |
-| Revisión del procedimiento | DOC1 es Rev03; DOC2 se basó en Rev02 |
-| Lubricante | DOC1 y DOC3: sintético ISO VG 46; DOC2 encontró mineral ISO VG 68 instalado |
-| Cambio de aceite | DOC1: 2,000 h (boletín BT-CA-2025-11); DOC3 (revisión 2022): 3,000 h |
-| Temperatura máxima de carcasa | DOC1: 60 °C; DOC3: 65 °C |
-
-### Paso 3: Identificar riesgos y acciones pendientes (2 min)
-
-1. Enviar:
-
-```text
-Lista los riesgos técnicos y las acciones pendientes del expediente. Para cada acción pendiente indica: origen (documento y sección), antigüedad, responsable si existe y consecuencia de no atenderla. Señala también cualquier pendiente implícito que no esté listado como tal.
-```
-
-**Resultado esperado:** Riesgos y acciones pendientes con su fuente.
-
-**Verificación:** Claude identifica la OT-2026-0087 del rodamiento (5.1 mm/s contra límite de 4.5 mm/s), la calibración vencida del MP-112, la hoja de seguridad del lubricante y el filtro de aire con cerca de 620 h. Un buen análisis también señala que la calibración del manómetro MD-220 vence en marzo de 2026, antes de la próxima inspección de mayo.
-
-### Paso 4: Verificar las citas (3 min)
-
-1. Elegir 4 hallazgos de las respuestas.
-2. Abrir el PDF citado en cada uno y localizar la sección indicada.
-3. En un documento de Word, crear una tabla con **Hallazgo**, **Fuente citada por Claude**, **¿La cita es correcta? (Sí/No)** y **Comentario**.
-4. Si una cita es incorrecta, corregirla con la fuente real.
-
-**Resultado esperado:** 4 citas verificadas.
-
-**Verificación:** Cada fila tiene una fuente comprobada en el PDF.
-
-### Paso 5: Generar el informe consolidado (2 min)
-
-1. Enviar:
-
-```text
-Genera un informe consolidado para el jefe de ingeniería con: resumen ejecutivo (5 líneas), matriz de inconsistencias, riesgos priorizados, acciones pendientes con responsable y fecha sugerida, decisión recomendada sobre el documento que debe prevalecer en cada inconsistencia y siguientes pasos. Máximo 1 página y media.
-```
-
-2. Copiar el informe al documento de Word, debajo de la tabla de verificación, y guardarlo como `Informe_Consolidado_CA-250_[INICIALES].docx`.
-
-**Resultado esperado:** Un informe consolidado con recomendaciones.
-
-**Verificación:** El informe recomienda ejecutar de inmediato la OT-2026-0087 y actualizar o conciliar la especificación del fabricante (revisión 2022) con el procedimiento Rev03.
-
-## Validación y Pruebas
-
-| Caso | Acción o prompt | Resultado esperado |
-| :--- | :--- | :--- |
-| Cita verificable | Abrir DOC2, sección 2.3 | Vibración de 5.1 mm/s RMS en el rodamiento lado acople |
-| Prevalencia de documentos | Revisar la decisión recomendada | Prevalece el documento más reciente y respaldado (DOC1 con el boletín BT-CA-2025-11), sujeto a confirmación del fabricante |
-| Prueba adversarial | Preguntar: *"¿Qué dice el DOC2 sobre la presión de aceite del cárter?"* | Claude indica que el DOC2 no menciona ese parámetro |
-
-## Solución de Problemas
-
-### Problema 1: Claude alcanzó el límite de mensajes o de archivos
-
-- **Síntomas:** Mensaje de límite de uso.
-- **Causa:** Restricciones de la versión gratuita.
-- **Solución:** Combinar los pasos 2 y 3 en un solo mensaje, o continuar más tarde con autorización del instructor.
-
-### Problema 2: Claude da citas generales sin sección
-
-- **Síntomas:** Hallazgos con *"según el procedimiento"* sin número de sección.
-- **Causa:** La instrucción de citar no se aplicó de forma estricta.
-- **Solución:** Enviar: *"Para cada hallazgo, agrega el documento y el número de sección exacto"*.
-
-## Limpieza
-
-1. Conservar `Informe_Consolidado_CA-250_[INICIALES].docx` en `Documentos\Practicas_IA_Ingenieria\Practica12`.
-2. Si la política de la empresa lo indica, eliminar el proyecto o la conversación de Claude.
-
-## Resumen
-
-- Se organizó la documentación de un equipo en Claude con instrucciones del caso.
-- Se identificaron inconsistencias, riesgos y acciones pendientes con su fuente.
-- Se verificaron las citas y se generó un informe consolidado para la toma de decisiones.
+## Descripción
+Los participantes utilizarán **Claude** y su capacidad de generación y análisis de contexto para trabajar con manuales técnicos, procedimientos, especificaciones, normas y reportes de ingeniería simulados de forma automatizada (sin necesidad de subir archivos externos). El asistente evaluará los documentos generados de forma autónoma para identificar inconsistencias normativas, riesgos operativos y acciones pendientes, estructurando y generando un informe consolidado listo para respaldar la toma de decisiones estratégicas del equipo técnico.
 
 ---
 
-[⬅ Anterior: Práctica 11](../Practica11/README.md) | [Inicio](../../README.md)
+## Sección 1: Demostración del Instructor (3 Pasos)
+
+1. **Generación automática de documentación técnica y análisis contextual inicial:**
+   * El instructor ingresa a la plataforma de **Claude** y ejecuta un comando detallado para que el sistema cree la documentación simulada y realice el diagnóstico preliminar:
+     ```text
+     Actúa como un Auditor Técnico Senior y Arquitecto de Procesos Industriales. 
+     Genera un conjunto de documentos técnicos simulados que incluya manuales operativos, normas de seguridad y reportes recientes de mantenimiento para una planta de producción. 
+     Analiza este contenido de forma integral para identificar las principales desviaciones normativas, discrepancias entre procedimientos y posibles riesgos operativos que comprometan la continuidad del proceso.
+     ```
+
+2. **Identificación y cruce de inconsistencias y riesgos críticos:**
+   * El instructor evalúa los hallazgos preliminares y solicita al asistente profundizar en el cruce de información mediante un prompt de refinamiento en el chat:
+     ```text
+     Actúa como un Especialista en Gestión de Riesgos Operativos. 
+     Toma como base el análisis anterior y cruza los manuales generados con las normas técnicas vigentes. 
+     Identifica con precisión las inconsistencias normativas, los puntos críticos de fallo no cubiertos y las acciones pendientes que el equipo de ingeniería debe resolver de forma prioritaria.
+     ```
+
+3. **Consolidación y redacción del informe técnico para la toma de decisiones:**
+   * El instructor traslada los hallazgos analíticos consolidados hacia el panel de chat para redactar el documento formal de gestión mediante la siguiente instrucción guiada:
+     ```text
+     Actúa como un Director de Ingeniería y Operaciones. 
+     A partir de las inconsistencias, riesgos y acciones pendientes identificadas, redacta un informe consolidado formal que contenga: un Resumen Ejecutivo para la gerencia, la Matriz de Inconsistencias Normativas, la Evaluación de Riesgos Críticos y un Plan de Acciones Prioritarias, utilizando un formato de Markdown limpio estructurado y listo para su exportación corporativa.
+     ```
+
+---
+
+## Sección 2: Práctica Guiada del Participante (5 Pasos)
+
+1. **Inicialización de la sesión y generación automática de la base documental:**
+   * Abre tu interfaz de **Claude**, prepara el espacio de trabajo digital y envía la siguiente instrucción para que el asistente cree el entorno de prueba:
+     ```text
+     Actúa como un Especialista en Operaciones y Manufactura. 
+     Genera un set de documentación simulada de alta fidelidad que incluya fragmentos de manuales técnicos, especificaciones de equipos y reportes de inspección de ingeniería para trabajar sobre ellos.
+     ```
+
+2. **Ejecución del análisis integral para la detección de anomalías y vacíos:**
+   * Copia y envía la siguiente instrucción detallada dentro del chat para que la herramienta procese la documentación generada:
+     ```text
+     Actúa como un Analista Senior de Confiabilidad y Procesos. 
+     Revisa la documentación técnica creada en la sesión y realiza un escaneo exhaustivo para identificar vacíos en los procedimientos, discrepancias en las especificaciones de operación y cualquier factor de riesgo que afecte la seguridad del equipo de ingeniería.
+     ```
+
+3. **Cruce normativo y auditoría de acciones pendientes:**
+   * Solicita al asistente que profundice en el cumplimiento de los estándares de ingeniería mediante el siguiente comando en el chat:
+     ```text
+     Actúa como un Auditor de Calidad y Normativa Industrial. 
+     Compara los procedimientos operativos simulados frente a las normativas de referencia contenidas en los manuales, detectando los puntos donde existen contradicciones y listando todas las acciones pendientes que se dejaron sin resolver en los reportes técnicos.
+     ```
+
+4. **Estructuración del informe consolidado para la gerencia técnica:**
+   * Envía la siguiente directriz para que el sistema redacte el documento de soporte directivo estructurado dentro de la interfaz:
+     ```text
+     Actúa como un Gerente de Ingeniería de Planta. 
+     A partir de las inconsistencias y riesgos detectados en la documentación simulada, redacta un informe consolidado formal que incluya: 1. Introducción y Contexto del Diagnóstico, 2. Hallazgos de Inconsistencias y Riesgos Críticos, y 3. Recomendaciones Estratégicas para la Toma de Decisiones del equipo técnico.
+     ```
+
+5. **Refinamiento de formato y preparación para la entrega corporativa:**
+   * Envía el último prompt en el chat para optimizar la presentación visual y el tono profesional del documento antes de utilizarlo:
+     ```text
+     Revisa el tono técnico y gerencial del informe generado, asegúrate de que toda la información esté organizada mediante etiquetas de Markdown limpias y estructuradas (con títulos, subtítulos, viñetas y tablas de resumen), y déjalo completamente listo para copiar y pegar en tu documentación corporativa o presentaciones ejecutivas.
+     ```
+
+## Resultado esperado
+Un análisis exhaustivo de manuales, normas y reportes técnicos generado y procesado íntegramente mediante la inteligencia contextual de **Claude**, complementado con un informe consolidado estructurado para identificar inconsistencias, riesgos y acciones pendientes que respalden la toma de decisiones estratégicas del equipo de ingeniería.

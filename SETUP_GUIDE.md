@@ -16,14 +16,14 @@
 | Fecha de última validación | 2026-11-09 (revisión del repositorio) |
 | Repositorio de laboratorios | [github.com/Netec-Mx/Custom-IA_GEN_ESSE_ING-AB-Priv-](https://github.com/Netec-Mx/Custom-IA_GEN_ESSE_ING-AB-Priv-) |
 | Rama y revisión analizada | `changes_course`, versión 1.0 |
-| Alcance revisado | 3 capítulos, 6 módulos, 12 prácticas, 19 archivos de recursos, README principal y Setup Guide |
+| Alcance revisado | 3 capítulos, 6 módulos, 12 prácticas, README principal y Setup Guide |
 | Modalidad del entorno | Web (servicios SaaS gratuitos) con aplicaciones de ofimática locales o en la web |
 
 [Inicio](README.md)
 
 # Objetivo
 
-Preparar, para cada participante, un equipo con navegador actualizado, Microsoft Word, Excel y PowerPoint (escritorio o web), cuentas gratuitas activas en ChatGPT, Microsoft Copilot, Google (Gemini, NotebookLM y Google AI Studio) y Claude, y acceso a n8n con una credencial de un modelo de IA gratuito. También se descargan los archivos ficticios de las 12 prácticas en una carpeta local. El entorno se considera listo cuando las validaciones obligatorias de la sección [Validación del Entorno](#validacion-entorno) se aprueban con la cuenta de un participante. No se requiere programación ni línea de comandos.
+Preparar, para cada participante, un equipo con navegador actualizado, Microsoft Word, Excel y PowerPoint (escritorio o web), cuentas gratuitas activas en ChatGPT, Microsoft Copilot, Google (Gemini, NotebookLM y Google AI Studio) y Claude, y acceso a n8n con una credencial de un modelo de IA gratuito. El entorno se considera listo cuando las validaciones obligatorias de la sección [Validación del Entorno](#validacion-entorno) se aprueban con la cuenta de un participante. No se requiere programación ni línea de comandos.
 
 # Requisitos de Hardware
 
@@ -84,7 +84,6 @@ Los servicios de IA son administrados y cambian sus modelos, funciones y límite
 | Nodos de n8n | Form Trigger, Basic LLM Chain, Google Gemini Chat Model, Structured Output Parser, Switch, Edit Fields, Extract from File, Aggregate, Convert to File, n8n Form | Prácticas 5 y 6 | Incluidos en n8n Cloud y Community ([documentación](https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.chainllm/)) |
 | Credencial **Google Gemini(PaLM) Api** en n8n | Clave gratuita de Google AI Studio | Prácticas 5 y 6 | **Credentials > Create credential** ([documentación](https://docs.n8n.io/integrations/builtin/credentials/googleai/)) |
 | Nodo Gmail de n8n | Opcional | Práctica 5, opción B | **Sign in with Google** desde el nodo ([documentación](https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/)) |
-| Archivos de las prácticas | Versión 1.0 del repositorio | Prácticas 1 a 12 | Carpetas `CapituloNN/PracticaNN/recursos/` (la Práctica 10 usa los archivos de la Práctica 9) |
 
 ## Licencias, cuentas y permisos
 
@@ -107,8 +106,6 @@ Las cuentas y la clave de Google AI Studio son personales. No registrar contrase
 
 - Repositorio autorizado: [github.com/Netec-Mx/Custom-IA_GEN_ESSE_ING-AB-Priv-](https://github.com/Netec-Mx/Custom-IA_GEN_ESSE_ING-AB-Priv-) (botón **Code > Download ZIP**) o paquete ZIP entregado por el instructor.
 - Revisión: rama `main`, una vez integrados los cambios de `changes_course`.
-- Directorio de trabajo: `Documentos\Practicas_IA_Ingenieria\` con una subcarpeta por práctica (`Practica01` a `Practica12`).
-- Archivos de entrada: carpetas `recursos` de cada práctica.
 
 ## 2. Instalar o habilitar los componentes
 
@@ -135,17 +132,9 @@ Las cuentas y la clave de Google AI Studio son personales. No registrar contrase
 
 **Resultado esperado:** n8n abre el lienzo de flujos y la credencial queda guardada.
 
-### Carpetas de trabajo
-
-1. Descomprimir el ZIP del repositorio.
-2. Crear `Documentos\Practicas_IA_Ingenieria\` y, dentro, las carpetas `Practica01` a `Practica12`.
-3. Copiar a cada carpeta el contenido de `CapituloNN\PracticaNN\recursos` correspondiente. Para la Práctica 10, copiar los 4 PDF de la Práctica 9.
-
-**Resultado esperado:** 19 archivos de recursos distribuidos en las carpetas de las prácticas.
-
 ## 3. Preparar archivos de configuración
 
-No se requieren archivos de configuración. Los archivos de entrada están en las carpetas `recursos` y no deben modificarse antes de la práctica.
+No se requieren archivos de configuración. 
 
 # Variables de Entorno
 
@@ -157,18 +146,9 @@ No se requieren variables de entorno: el curso no usa programación ni línea de
 
 | Parámetro | Valor o convención | Observaciones |
 |---|---|---|
-| Raíz de trabajo | `Documentos\Practicas_IA_Ingenieria\` | Una carpeta por práctica |
-| Nombre de entregables | `Nombre_[INICIALES].ext` | Ejemplo: `Lista_Verificacion_Respuesta_IA_LMR.xlsx` |
 | Datos | Ficticios o anonimizados | No cargar información real de la organización |
 | Nombres de flujos en n8n | `P05 ...` y `P06 ...` con las iniciales del participante | Evita confusiones en instancias compartidas |
 | Escenarios técnicos | Torre de enfriamiento CT-4500X (prácticas 1 a 4), prensa hidráulica PH-400 (prácticas 8 a 11) y compresor de aire CA-250 (Práctica 12) | Equipos ficticios |
-
-## Estructura de carpetas
-
-```text
-Documentos\Practicas_IA_Ingenieria\
-├── Practica01\ ... Practica12\   Archivos de cada práctica y entregables
-```
 
 ## Recursos compartidos
 
@@ -182,7 +162,6 @@ No hay recursos compartidos entre participantes, salvo la instancia de n8n Commu
 | Varias prácticas estaban juntas en un mismo README | Un README por práctica (12 en total) | Ninguno |
 | Las prácticas de n8n usaban nodos Code con JavaScript, Docker y comandos de terminal (`docker cp`), contrario al perfil "sin experiencia en programación" | Flujos sin código: formulario, Extract from File, Aggregate, Basic LLM Chain con salida estructurada, Switch y Convert to File | Ninguno |
 | Una práctica de n8n dependía de un modelo obsoleto de Groq (Llama 3 8B, `llama-3-8b-8192`) | Modelo Gemini con clave gratuita de Google AI Studio | Ninguno |
-| El participante debía capturar a mano un Excel de 20 filas, crear 4 documentos en Google Docs y "replicar el patrón" hasta 80 registros, lo que no cabe en prácticas de 14 minutos | 19 archivos listos para descargar en `recursos` | Ninguno |
 | Se citaba ISO 10816-3 con el grupo 2 como "15-75 kW sobre soporte rígido, límite 7.1 mm/s" | ISO 20816-3 (sustituye a ISO 10816-3): grupo 2 de 15 kW a 300 kW; zona C/D de 4.5 mm/s (rígido) y 7.1 mm/s (flexible) | Ninguno |
 | La fuente de referencia citaba CTI STD-201 como estándar de prueba y un título antiguo de ASHRAE Guideline 12 | CTI ATC-105 (prueba), CTI STD-201 (certificación) y ASHRAE Guideline 12-2023 (versión vigente) | Ninguno |
 | La Práctica 12 llamaba "Compresor PH-400" a un equipo, mientras las prácticas 9 a 11 usan PH-400 para una prensa hidráulica | Compresor de aire CA-250 en la Práctica 12 | Ninguno |
@@ -257,12 +236,11 @@ No aplica. El curso se valida en interfaces web con los procedimientos V-01 a V-
 - [ ] Cuentas gratuitas activas en ChatGPT, Copilot, Google (Gemini, NotebookLM y AI Studio) y Claude.
 - [ ] Acceso a n8n (prueba de n8n Cloud vigente o instancia Community) y credencial de Gemini guardada.
 - [ ] Dominios de las herramientas permitidos en la red del cliente.
-- [ ] 19 archivos de las prácticas descargados en `Documentos\Practicas_IA_Ingenieria\`.
 - [ ] Validaciones V-01 a V-09 aprobadas y registradas.
 
 # Resumen
 
-Para iniciar el curso, cada participante necesita un navegador actualizado, Word, Excel y PowerPoint, cuentas gratuitas en las cuatro plataformas de IA, NotebookLM y Google AI Studio, acceso a n8n con una clave gratuita de Gemini y los archivos ficticios de las prácticas descargados. No se requiere programación ni instalación de lenguajes o herramientas de línea de comandos.
+Para iniciar el curso, cada participante necesita un navegador actualizado, Word, Excel y PowerPoint, cuentas gratuitas en las cuatro plataformas de IA, NotebookLM y Google AI Studio y acceso a n8n con una clave gratuita de Gemini. No se requiere programación ni instalación de lenguajes o herramientas de línea de comandos.
 
 <a id="registro-validacion"></a>
 
